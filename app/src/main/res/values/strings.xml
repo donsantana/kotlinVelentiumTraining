@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">MySecondApp</string>
+    <string name="aboutMenu">About</string>
+    <string name="tapMeBtn">Tap Me!</string>
+    <string name="timeLeftText">Time Left: %1$d</string>
+    <string name="yourScoreText">Your Score: %1$d</string>
+    <string name="gameOverMessage">Times up! Your Score was: %1$d</string>
+    <string name="aboutTitle">Time Fighter</string>
+    <string name="aboutMessage">Creating my android apps</string>
+</resources>
