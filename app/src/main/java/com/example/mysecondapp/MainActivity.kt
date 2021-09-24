@@ -1,5 +1,6 @@
 package com.example.mysecondapp
 
+import android.content.DialogInterface
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.CountDownTimer
@@ -9,6 +10,7 @@ import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
+import kotlin.system.exitProcess
 
 class MainActivity : AppCompatActivity() {
 
@@ -86,17 +88,37 @@ class MainActivity : AppCompatActivity() {
         showInfo()
         true
       }
+      R.id.actionClose -> {
+        closeApp()
+        true
+      }
       else -> super.onOptionsItemSelected(item)
     }
   }
 
   private fun showInfo() {
-    val dialogTitle = getString(R.string.aboutTitle, BuildConfig.VERSION_NAME)
+    val dialogTitle = getString(R.string.aboutTitle)
     val dialogMessage = getString(R.string.aboutMessage)
 
     val builder = AlertDialog.Builder(this)
     builder.setTitle(dialogTitle)
     builder.setMessage(dialogMessage)
+    builder.create().show()
+  }
+
+  private fun closeApp(){
+
+    val builder = AlertDialog.Builder(this)
+    builder.setMessage(R.string.closeMessage)
+      .setPositiveButton(R.string.yesText,
+        DialogInterface.OnClickListener { dialog, id ->
+          exitProcess(0)
+        })
+      .setNegativeButton(R.string.noText,
+        DialogInterface.OnClickListener { dialog, id ->
+          // User cancelled the dialog
+        })
+    // Create the AlertDialog object and return it
     builder.create().show()
   }
 }

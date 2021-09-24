@@ -7,4 +7,9 @@
     <string name="gameOverMessage">Times up! Your Score was: %1$d</string>
     <string name="aboutTitle">Time Fighter</string>
     <string name="aboutMessage">Creating my android apps</string>
+    <string name="closeMenu">Close</string>
+    <string name="closeMessage">Are you sure?</string>
+    <string name="yesText">Yes</string>
+    <string name="noText">No</string>
+    <string name="cancel">Cancel</string>
 </resources>

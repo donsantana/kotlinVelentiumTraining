@@ -7,4 +7,9 @@
         android:icon="@android:drawable/ic_dialog_info"
         android:title="@string/aboutMenu"
         app:showAsAction="always" />
+    <item
+        android:id="@+id/actionClose"
+        android:icon="@android:drawable/ic_menu_close_clear_cancel"
+        android:title="@string/closeMenu"
+        app:showAsAction="always" />
 </menu>
