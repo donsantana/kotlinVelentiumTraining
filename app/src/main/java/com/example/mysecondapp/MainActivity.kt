@@ -1,6 +1,7 @@
 package com.example.mysecondapp
 
 import android.content.DialogInterface
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.CountDownTimer
@@ -23,6 +24,7 @@ class MainActivity : AppCompatActivity() {
   internal lateinit var gameScoreText: TextView
   internal lateinit var timeLeftText: TextView
   internal lateinit var tapMeBtn: Button
+  internal lateinit var goToListBtn: Button
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
@@ -34,6 +36,12 @@ class MainActivity : AppCompatActivity() {
       incrementScore()
     }
     resetGame()
+
+    goToListBtn = findViewById(R.id.goToListBtn)
+    goToListBtn.setOnClickListener{
+      val intent = Intent(this,DisplayFlagList::class.java)
+      startActivity(intent)
+    }
   }
 
   private fun resetGame() {
