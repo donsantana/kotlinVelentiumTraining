@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.mysecondapp.models.MyCountry
 import com.example.mysecondapp.services.CountryService
 import com.example.mysecondapp.services.ServiceBuilder
+import io.realm.Realm
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -28,13 +29,15 @@ class DisplayFlagList : AppCompatActivity() {
     myRecicleView.layoutManager = GridLayoutManager(this, 2)
     myRecicleView.adapter = CountriesAdapter(countryList)
     loadCountries()
+
+    Realm.init(this)
+
   }
 
   private fun loadCountries() {
     //initiate the service
     val destinationService  = ServiceBuilder.buildService(CountryService::class.java)
     val requestCall = destinationService.getAffectedCountryList()
-
     //make network call asynchronously
     requestCall.enqueue(object : Callback<List<MyCountry>> {
       override fun onResponse(call: Call<List<MyCountry>>, response: Response<List<MyCountry>>) {
@@ -46,7 +49,7 @@ class DisplayFlagList : AppCompatActivity() {
             setHasFixedSize(true)
             layoutManager = GridLayoutManager(this@DisplayFlagList,2)
           }
-          //myRecicleView.adapter.notifyDataSetChanged()
+          myRecicleView.adapter?.notifyDataSetChanged()
         }else{
           Toast.makeText(this@DisplayFlagList, "Something went wrong ${response.message()}", Toast.LENGTH_SHORT).show()
         }
