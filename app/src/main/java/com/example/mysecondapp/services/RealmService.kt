@@ -1,5 +1,6 @@
 package com.example.mysecondapp.services
 
+import android.util.Log
 import com.example.mysecondapp.models.MyCountry
 import com.example.mysecondapp.realm.CountryInfoRealm
 import com.example.mysecondapp.realm.MyCountryRealm
@@ -8,6 +9,8 @@ import io.realm.RealmConfiguration
 import io.realm.kotlin.executeTransactionAwait
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Dispatchers.IO
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.runBlocking
 import okhttp3.Dispatcher
 
 class RealmService {
@@ -22,9 +25,19 @@ class RealmService {
       .build()
 
   private val config: RealmConfiguration = providesRealmConfig()
+  val realm = Realm.getInstance(config)
+
+  fun insertCountries(myCountryList: List<MyCountry>){
+    for(country in myCountryList){
+      runBlocking {
+        launch {
+          insertCountry(country)
+        }
+      }
+    }
+  }
 
   suspend fun insertCountry(myCountry: MyCountry){
-    val realm = Realm.getInstance(config)
     var countryInfoRealm = CountryInfoRealm(flag = myCountry.countryInfo.flag, originalId = myCountry.countryInfo.id)
     realm.executeTransactionAwait(Dispatchers.IO) { realmTransaction ->
       val countryRealm = MyCountryRealm(
@@ -52,12 +65,12 @@ class RealmService {
         todayRecovered = myCountry.todayRecovered,
         updated = myCountry.updated
       )
-
       realmTransaction.insert(countryRealm)
     }
 
   }
 
+  //HELPER FUNCTION TO MAP THE REALM RESULT INTO OBJECT
   private fun mapCountry(countryRealm: MyCountryRealm): MyCountry{
     val countryInfo = MyCountry.CountryInfo(countryRealm.countryInfo!!.flag,countryRealm.countryInfo!!.originalId)
     return MyCountry(
@@ -88,7 +101,7 @@ class RealmService {
   }
 
   suspend fun retrieveCountries(): List<MyCountry>{
-    val realm = Realm.getInstance(config)
+    //val realm = Realm.getInstance(config)
     val countryList = mutableListOf<MyCountry>()
 
     realm.executeTransactionAwait(Dispatchers.IO) { realTransaction ->
@@ -101,5 +114,31 @@ class RealmService {
       )
     }
     return countryList
+  }
+
+  suspend fun retrieveCountry(byName: String): MyCountry?{
+    val countryList = mutableListOf<MyCountry>()
+
+    realm.executeTransactionAwait(Dispatchers.IO) { realTransaction ->
+      countryList.addAll(realTransaction
+        .where(MyCountryRealm::class.java)
+        .findAll()
+        .map {
+          mapCountry(it)
+        }
+      )
+    }
+    return countryList.first()
+  }
+
+  suspend fun removeAllCountries(){
+    realm.executeTransactionAwait(Dispatchers.IO) { realmTransaction ->
+      // 1.
+      val countryToRemove = realmTransaction
+        .where(MyCountryRealm::class.java)
+        .findAll()
+      // 2.
+      countryToRemove?.deleteAllFromRealm()
+    }
   }
 }
