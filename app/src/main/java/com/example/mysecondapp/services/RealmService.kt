@@ -141,4 +141,17 @@ class RealmService {
       countryToRemove?.deleteAllFromRealm()
     }
   }
+
+  suspend fun removeCountry(byName: String) {
+    val realm = Realm.getInstance(config)
+    realm.executeTransactionAwait(Dispatchers.IO) { realmTransaction ->
+      // 1.
+      val countryToRemove = realmTransaction
+        .where(MyCountryRealm::class.java)
+        .equalTo("country", byName)
+        .findFirst()
+      // 2.
+      countryToRemove?.deleteFromRealm()
+    }
+  }
 }
