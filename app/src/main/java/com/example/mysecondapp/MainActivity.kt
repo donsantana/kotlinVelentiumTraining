@@ -5,12 +5,15 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.CountDownTimer
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
+import com.google.android.material.bottomnavigation.BottomNavigationItemView
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlin.system.exitProcess
 
 class MainActivity : AppCompatActivity() {
@@ -25,6 +28,7 @@ class MainActivity : AppCompatActivity() {
   internal lateinit var timeLeftText: TextView
   internal lateinit var tapMeBtn: Button
   internal lateinit var goToListBtn: Button
+  internal lateinit var bottomNavigationView: BottomNavigationView
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
@@ -32,8 +36,16 @@ class MainActivity : AppCompatActivity() {
     gameScoreText = findViewById(R.id.yourScoreText)
     timeLeftText = findViewById(R.id.timeLeftText)
     tapMeBtn = findViewById(R.id.tapMeBtn)
+    bottomNavigationView = findViewById(R.id.bottomNavigation)
     tapMeBtn.setOnClickListener { view ->
       incrementScore()
+    }
+
+    bottomNavigationView.setOnItemReselectedListener {
+      Log.d("item","${it.itemId}")
+      when(it.itemId){
+        R.id.flag_menu->navigateToFlagActivity()
+      }
     }
     resetGame()
 
@@ -42,6 +54,12 @@ class MainActivity : AppCompatActivity() {
       val intent = Intent(this,DisplayFlagList::class.java)
       startActivity(intent)
     }
+
+  }
+
+  private fun navigateToFlagActivity(){
+      val intent = Intent(this,DisplayFlagList::class.java)
+      startActivity(intent)
   }
 
   private fun resetGame() {

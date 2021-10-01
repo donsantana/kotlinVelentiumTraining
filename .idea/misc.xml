@@ -3,11 +3,22 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable/flags_icons_background.xml" value="0.4078125" />
+        <entry key="app/src/main/res/drawable/ic_baseline_flag_24.xml" value="0.4078125" />
+        <entry key="app/src/main/res/drawable/ic_baseline_home_24.xml" value="0.4078125" />
+        <entry key="app/src/main/res/drawable/ic_baseline_videogame_asset_24.xml" value="0.4078125" />
+        <entry key="app/src/main/res/layout/activity_bottom_nav.xml" value="0.39166666666666666" />
         <entry key="app/src/main/res/layout/activity_display_flag_list.xml" value="0.2625" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.48867753623188404" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="app/src/main/res/layout/country_item.xml" value="0.3115942028985507" />
         <entry key="app/src/main/res/layout/flag_list.xml" value="0.48278985507246375" />
+        <entry key="app/src/main/res/layout/fragment_dashboard.xml" value="0.39166666666666666" />
+        <entry key="app/src/main/res/menu/bottom_nav.xml" value="0.39166666666666666" />
+        <entry key="app/src/main/res/menu/bottom_nav_menu.xml" value="0.5192708333333333" />
         <entry key="app/src/main/res/menu/menu.xml" value="0.5192708333333333" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/flags_icons.xml" value="0.5354166666666667" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/home_icons_round.xml" value="0.5354166666666667" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.4078125" />
       </map>
     </option>
   </component>

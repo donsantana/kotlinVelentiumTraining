@@ -14,10 +14,13 @@
         android:theme="@style/Theme.MySecondApp"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".BottomNav"
+            android:exported="true"
+            android:label="@string/title_activity_bottom_nav" />
+        <activity
             android:name=".DisplayFlagList"
             android:exported="true"
-            android:parentActivityName=".MainActivity"
-            />
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".MainActivity"
             android:exported="true">

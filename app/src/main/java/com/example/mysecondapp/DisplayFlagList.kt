@@ -54,7 +54,6 @@ class DisplayFlagList : AppCompatActivity() {
       }
       Toast.makeText(this, "Disconnected", Toast.LENGTH_SHORT).show()
     }
-
   }
 
   private fun loadCountries() {
