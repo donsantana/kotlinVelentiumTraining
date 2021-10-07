@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/ScanFragment">
+
+    <fragment
+        android:id="@+id/ScanFragment"
+        android:name="com.velentium.android.platformv.ui.fragments.ScanFragment"
+        android:label="@string/scanning_for_devices"
+        tools:layout="@layout/fragment_scan">
+
+        <action
+            android:id="@+id/action_ScanFragment_to_ConnectionFragment"
+            app:destination="@id/ConnectionFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/ConnectionFragment"
+        android:name="com.velentium.android.platformv.ui.fragments.ConnectionFragment"
+        android:label="@string/connected_to_device"
+        tools:layout="@layout/fragment_connection">
+
+        <action
+            android:id="@+id/action_ConnectionFragment_to_ScanFragment"
+            app:destination="@id/ScanFragment" />
+        <argument
+            android:name="connectedDevice"
+            app:argType="android.bluetooth.BluetoothDevice" />
+    </fragment>
+</navigation>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/home_menu"
+        android:icon="@drawable/ic_baseline_home_24"
+        android:title="@string/home_menu" />
+    <item
+        android:id="@+id/game_menu"
+        android:icon="@drawable/ic_baseline_videogame_asset_24"
+        android:title="@string/game_menu" />
+    <item
+        android:id="@+id/flag_menu"
+        android:icon="@drawable/ic_baseline_flag_24"
+        android:title="@string/flags_menu" />
+
+</menu>

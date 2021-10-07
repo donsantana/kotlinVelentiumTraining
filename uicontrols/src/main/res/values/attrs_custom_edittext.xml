@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CustomEditText">
+        <attr name="android:imeOptions" format="flags" />
+        <attr name="android:inputType" format="flags" />
+        <attr name="android:selectAllOnFocus" format="boolean" />
+        <attr name="android:imeActionLabel" format="string" />
+
+        <attr name="textAccessibilityId" format="string" />
+        <attr name="hintText" format="string" />
+        <!-- label text will also be used for hintText if hintText is missing -->
+        <attr name="labelText" format="string" />
+        <attr name="labelAccessibilityId" format="string" />
+
+        <attr name="errorText" format="string" />
+        <attr name="errorTextColor" format="color" />
+        <attr name="errorAccessibilityId" format="string" />
+    </declare-styleable>
+</resources>

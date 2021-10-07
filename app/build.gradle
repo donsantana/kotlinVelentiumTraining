@@ -1,0 +1,157 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'realm-android'
+    id 'androidx.navigation.safeargs.kotlin'
+//    id "com.google.protobuf" version "0.8.17"
+}
+
+android {
+    compileSdk 30
+
+    defaultConfig {
+        applicationId "com.velentium.android.platformv"
+        minSdk 24
+        targetSdk 30
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8
+    }
+    buildFeatures {
+        viewBinding true
+        dataBinding true
+    }
+}
+
+//protobuf {
+//    protoc { artifact = 'com.google.protobuf:protoc:3.10.0' }
+//
+//    plugins {
+//        javalite {
+//            artifact = "com.google.protobuf:protoc-gen-javalite:3.0.0"
+//        }
+//    }
+//
+//    generateProtoTasks {
+//        all().each { task ->
+//            task.builtins {
+//                // In most cases you don't need the full Java output
+//                // if you use the lite output.
+//                remove java
+//            }
+//            task.plugins {
+//                javalite { }
+//            }
+//        }
+//    }
+//}
+
+dependencies {
+    implementation project(path: ':uicontrols')
+    implementation 'com.intuit.sdp:sdp-android:1.0.6'
+    implementation 'com.intuit.ssp:ssp-android:1.0.6'
+
+    implementation 'androidx.activity:activity-ktx:1.3.1'
+    implementation 'androidx.fragment:fragment-ktx:1.3.6'
+    implementation 'androidx.viewpager2:viewpager2:1.0.0'
+    implementation 'androidx.annotation:annotation:1.2.0'
+    implementation 'androidx.core:core-ktx:1.6.0'
+    implementation 'androidx.collection:collection-ktx:1.1.0'
+    implementation 'androidx.appcompat:appcompat:1.3.1'
+    implementation 'com.google.android.material:material:1.4.0'
+    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.1'
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    implementation 'com.squareup.picasso:picasso:2.71828'
+    implementation 'com.squareup.okhttp3:okhttp:3.8.1'
+
+    def lifecycle_version = '2.3.1'
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle_version"
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
+
+    def navigation_version = '2.3.5'
+    implementation "androidx.navigation:navigation-runtime-ktx:$navigation_version"
+    implementation "androidx.navigation:navigation-fragment-ktx:$navigation_version"
+    implementation "androidx.navigation:navigation-ui-ktx:$navigation_version"
+
+    implementation 'androidx.work:work-runtime-ktx:2.6.0'
+
+    // Koin main features for Android (Scope,ViewModel ...)
+    implementation "io.insert-koin:koin-android:$koin_version"
+    // Koin for Jetpack WorkManager
+    implementation "io.insert-koin:koin-androidx-workmanager:$koin_version"
+
+    implementation "no.nordicsemi.android:ble-ktx:$nordic_ble_version"
+    implementation "no.nordicsemi.android:ble-common:$nordic_ble_version"
+    implementation "no.nordicsemi.android:ble-livedata:$nordic_ble_version"
+    implementation "no.nordicsemi.android.support.v18:scanner:$nordic_ble_scan_version"
+
+
+//    implementation 'com.google.protobuf:protobuf-lite:3.0.0'
+
+    def aws_sdk_version = '2.30.0'
+    implementation "com.amazonaws:aws-android-sdk-core:$aws_sdk_version"
+    implementation "com.amazonaws:aws-android-sdk-s3:$aws_sdk_version"
+//    implementation "com.amazonaws:aws-android-sdk-cognitoidentityprovider:$aws_sdk_version"
+    implementation "com.amazonaws:aws-android-sdk-mobile-client:$aws_sdk_version"
+//    implementation "com.amazonaws:aws-android-sdk-auth-userpools:$aws_sdk_version"
+
+    def kotlin_coroutines_version = '1.4.3'
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$kotlin_coroutines_version"
+    /* Reactive Libraries */
+    implementation 'io.reactivex.rxjava2:rxkotlin:2.4.0'
+    api 'io.reactivex.rxjava2:rxjava:2.2.21'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
+    implementation 'com.jakewharton.rxrelay2:rxrelay:2.0.0'
+
+    //Retrofit
+    def retrofit_version = '2.9.0'
+    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
+    implementation "com.squareup.retrofit2:adapter-rxjava:$retrofit_version"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:$retrofit_version"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
+    implementation "com.squareup.retrofit2:converter-scalars:$retrofit_version"
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.9.0'
+
+    implementation 'joda-time:joda-time:2.10.10'
+
+    implementation 'io.realm:android-adapters:4.0.0'
+
+    def glide_version = '4.12.0'
+    implementation "com.github.bumptech.glide:glide:$glide_version"
+    kapt "com.github.bumptech.glide:compiler:$glide_version"
+
+    // Koin for JUnit 4
+    testImplementation "io.insert-koin:koin-test-junit4:$koin_version"
+
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+
+    testImplementation 'org.robolectric:robolectric:4.6.1'
+    testImplementation 'org.mockito:mockito-core:3.12.4'
+    testImplementation "com.nhaarman.mockitokotlin2:mockito-kotlin:$mockito_kotlin_version"
+
+    androidTestImplementation 'org.mockito:mockito-android:3.12.4'
+    testImplementation "io.mockk:mockk:$mockk_version"
+    androidTestImplementation "io.mockk:mockk-android:$mockk_version"
+}

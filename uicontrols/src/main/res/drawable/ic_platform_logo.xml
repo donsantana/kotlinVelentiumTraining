@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vector
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:name="velentiumLogoCanvas"
+    android:width="719dp"
+    android:height="719dp"
+    android:viewportWidth="719"
+    android:viewportHeight="719">
+    <!-- Group -->
+    <group
+        android:name="group"
+        android:rotation="90"
+        android:translateX="689.13"
+        android:translateY="67.32">
+
+        <!-- Polygon -->
+        <group
+            android:name="polygon-transform"
+            android:rotation="-31.05"
+            android:translateX="200.17"
+            android:translateY="312.74">
+            <path
+                android:name="polygon"
+                android:pathData="M 0,-108.35 L 93.83,54.18 L -93.83,54.18 L 0,-108.35 Z"
+                android:fillColor="#FFFFFFFF" />
+        </group>
+
+        <!-- Polygon 2 -->
+        <group
+            android:name="polygon2-transform"
+            android:rotation="-31.05"
+            android:translateX="200.17"
+            android:translateY="312.74">
+            <path
+                android:name="polygon2"
+                android:pathData="M 0,-108.35 L 93.83,54.18 L -93.83,54.18 L 0,-108.35 Z"
+                android:strokeColor="#FF129F4A"
+                android:strokeWidth="10" />
+        </group>
+
+        <!-- Bezier -->
+        <path
+            android:name="bezier"
+            android:pathData="M 3.99,25.1 L 114.78,217.66 L 118.59,424.15 L 0,642.11 L 3.99,25.1 Z"
+            android:fillColor="#FFFFFFFF" />
+
+        <!-- Bezier 2 -->
+        <path
+            android:name="bezier2"
+            android:pathData="M 3.99,25.1 L 114.78,217.66 L 118.59,424.15 L 0,642.11 L 3.99,25.1 Z"
+            android:strokeColor="#FF129F4A"
+            android:strokeWidth="10" />
+
+        <!-- Bezier 3 -->
+        <path
+            android:name="bezier3"
+            android:pathData="M 582.61,290.84 L 335.99,290.85 L 164.83,192.7 L 46.17,0 L 582.61,290.84 Z"
+            android:fillColor="#FFFFFFFF" />
+
+        <!-- Bezier 4 -->
+        <path
+            android:name="bezier4"
+            android:pathData="M 582.61,290.84 L 335.99,290.85 L 164.83,192.7 L 46.17,0 L 582.61,290.84 Z"
+            android:strokeColor="#FF129F4A"
+            android:strokeWidth="10" />
+
+        <!-- Bezier 5 -->
+        <path
+            android:name="bezier5"
+            android:pathData="M 46.18,660.07 L 171,432.84 L 335.51,333.66 L 585,333.66 L 393,449.97 L 46.18,660.07 Z"
+            android:fillColor="#FFFFFFFF" />
+
+        <!-- Bezier 6 -->
+        <path
+            android:name="bezier6"
+            android:pathData="M 46.18,660.07 L 171,432.84 L 335.51,333.66 L 585,333.66 L 393,449.97 L 46.18,660.07 Z"
+            android:strokeColor="#FF129F4A"
+            android:strokeWidth="10" />
+    </group>
+</vector>

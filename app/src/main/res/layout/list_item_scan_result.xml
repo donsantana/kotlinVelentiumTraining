@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="?attr/listPreferredItemHeightLarge"
+    android:background="?attr/selectableItemBackground"
+    android:clickable="true"
+    android:focusable="true"
+    android:padding="5dp"
+    tools:ignore="HardcodedText">
+
+    <ImageView
+        android:id="@+id/list_icon"
+        android:layout_width="?attr/listPreferredItemHeightLarge"
+        android:layout_height="?attr/listPreferredItemHeightSmall"
+        android:layout_marginStart="10dp"
+        android:clickable="false"
+        android:contentDescription="Device Found"
+        android:focusable="false"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_ble_scan"
+        android:tintMode="src_atop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/accent_color"
+        tools:ignore="HardcodedText" />
+
+    <TextView
+        android:id="@+id/list_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:clickable="false"
+        android:focusable="false"
+        android:textAppearance="?textAppearanceListItem"
+        app:layout_constraintStart_toEndOf="@id/list_icon"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="BLE Device" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/list_subtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="2dp"
+        android:clickable="false"
+        android:focusable="false"
+        android:lines="3"
+        android:maxLines="4"
+        android:textAppearance="?textAppearanceCaption"
+        android:textColor="?attr/colorPrimary"
+        app:autoSizeMaxTextSize="16sp"
+        app:autoSizeMinTextSize="12sp"
+        app:autoSizeStepGranularity="1sp"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintStart_toEndOf="@id/list_icon"
+        app:layout_constraintTop_toBottomOf="@id/list_title"
+        tools:text="Discovered at: 2:55:09 PM\nRSSI: -86\n00:00:00:00:00:00" />
+
+    <ImageView
+        android:id="@+id/disclosure_indicator"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginEnd="10dp"
+        android:clickable="false"
+        android:contentDescription="Select"
+        android:focusable="false"
+        android:src="@drawable/ic_right_chevron"
+        android:tintMode="src_atop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/accent_color" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

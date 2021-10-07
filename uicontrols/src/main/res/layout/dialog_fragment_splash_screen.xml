@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/splash_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/accent_color">
+
+    <ImageView
+        android:id="@+id/splash_logo_image"
+        android:layout_width="@dimen/_240sdp"
+        android:layout_height="@dimen/_240sdp"
+        android:contentDescription="@string/app_name"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_platform_logo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.core.widget.ContentLoadingProgressBar
+        android:id="@+id/splashSpinner"
+        style="?android:progressBarStyleLargeInverse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:foregroundGravity="center_horizontal"
+        android:indeterminate="true"
+        android:indeterminateTint="@color/secondary_accent_color"
+        android:indeterminateTintMode="src_atop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/splash_logo_image" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">PlatformV</string>
+    <string name="notify_title">@string/app_name</string>
+    <string name="notify_message">The app is using Bluetooth.</string>
+
+    <string name="dismiss">Dismiss</string>
+    <string name="ok">OK</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+    <string name="action_settings">Settings</string>
+    <string name="scan_detail">Device Found: %1$s\nRSSI: %2$d\n%3$s</string>
+    <string name="no_scan_results_message">↑ No results found, please try again!</string>
+    <string name="scanning_for_devices">Scanning for Devices…</string>
+    <string name="devices_found_count">Found %1$d Devices</string>
+    <string name="connected_to_device">Connected to Device: %1$s</string>
+    <string name="home_menu">Home</string>
+    <string name="game_menu">Game</string>
+    <string name="flags_menu">Flags</string>
+    <string name="tapMeBtn">Tap Me!</string>
+    <string name="timeLeftText">Time Left: %1$d</string>
+    <string name="yourScoreText">Your Score: %1$d</string>
+    <string name="gameOverMessage">Times up! Your Score was: %1$d</string>
+</resources>
