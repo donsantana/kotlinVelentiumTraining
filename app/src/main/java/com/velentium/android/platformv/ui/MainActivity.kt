@@ -1,5 +1,6 @@
 package com.velentium.android.platformv.ui
 
+import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -58,9 +59,8 @@ class MainActivity : AppCompatActivity() {
             Log.d("item","${it.itemId}")
             when(it.itemId){
                 R.id.home_menu->setCurrentFragment(homeFragment)
-                R.id.game_menu->setCurrentFragment(gameFragment)
-                R.id.flag_menu->navigateToFlagActivity()
-
+                R.id.game_menu->startActivity(Intent(this, GameActivity::class.java))
+                R.id.flag_menu->startActivity(Intent(this, DisplayFlagList::class.java))
             }
             true
         }
@@ -123,8 +123,8 @@ class MainActivity : AppCompatActivity() {
             commit()
         }
 
-    private fun navigateToFlagActivity(){
-        val intent = Intent(this,DisplayFlagList::class.java)
+    private fun navigateToFlagActivity(activity: AppCompatActivity){
+        val intent = Intent(this,activity::class.java)
         startActivity(intent)
     }
 }
