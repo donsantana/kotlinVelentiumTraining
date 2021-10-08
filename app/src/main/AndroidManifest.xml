@@ -21,6 +21,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PlatformV">
         <activity
+            android:name=".ui.HomeActivity"
+            android:exported="true"
+            android:label="@string/title_activity_home"
+            android:theme="@style/Theme.PlatformV.NoActionBar" />
+        <activity
             android:name=".ui.GameActivity"
             android:exported="true"
             android:parentActivityName=".ui.MainActivity" />

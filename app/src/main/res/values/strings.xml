@@ -20,4 +20,18 @@
     <string name="timeLeftText">Time Left: %1$d</string>
     <string name="yourScoreText">Your Score: %1$d</string>
     <string name="gameOverMessage">Times up! Your Score was: %1$d</string>
+
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+    <string name="title_activity_home">HomeActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+
 </resources>

@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
+import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
@@ -40,6 +41,11 @@ class MainActivity : AppCompatActivity() {
 
         setSupportActionBar(binding.toolbar)
 
+//        val toggle = ActionBarDrawerToggle(this,binding.drawerLayout, binding.toolbar,findViewById(R.id.gameFragment),findViewById(R.id.nav_host_fragment_content_main))
+//        toggle.isDrawerIndicatorEnabled = true
+//        binding.drawerLayout.addDrawerListener(toggle)
+//        toggle.syncState()
+
         val navController = findNavController(R.id.nav_host_fragment_content_main)
         appBarConfiguration = AppBarConfiguration(navController.graph)
         setupActionBarWithNavController(navController, appBarConfiguration)
@@ -58,7 +64,7 @@ class MainActivity : AppCompatActivity() {
         bottomNavigationView.setOnItemReselectedListener {
             Log.d("item","${it.itemId}")
             when(it.itemId){
-                R.id.home_menu->setCurrentFragment(homeFragment)
+                R.id.home_menu->startActivity(Intent(this, HomeActivity::class.java))
                 R.id.game_menu->startActivity(Intent(this, GameActivity::class.java))
                 R.id.flag_menu->startActivity(Intent(this, DisplayFlagList::class.java))
             }
