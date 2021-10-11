@@ -2,23 +2,22 @@ package com.velentium.android.platformv.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.setupWithNavController
-import com.google.android.material.navigation.NavigationView
+import androidx.appcompat.app.ActionBarDrawerToggle
 import com.velentium.android.platformv.R
+import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.content_home.*
 
 class HomeActivity : AppCompatActivity() {
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
     setContentView(R.layout.activity_home)
+    setSupportActionBar(homeToolbar)
 
-    //val appBarConfiguration = AppBarConfiguration(navController.graph, drawerLayout)
-    val navHostFragment =
-      supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
-    val navController = navHostFragment.navController
-    findViewById<NavigationView>(R.id.nav_view)
-      .setupWithNavController(navController)
+    val toggle = ActionBarDrawerToggle(this,drawer_layout,homeToolbar,R.string.open, R.string.close)
+    toggle.isDrawerIndicatorEnabled = true
+    drawer_layout.addDrawerListener(toggle)
+    toggle.syncState()
+
   }
 }
