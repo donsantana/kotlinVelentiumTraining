@@ -5,6 +5,10 @@
         android:icon="@drawable/ic_baseline_home_24"
         android:title="@string/home_menu" />
     <item
+        android:id="@+id/devices_menu"
+        android:icon="@drawable/ic_ble_scan"
+        android:title="@string/devices_menu" />
+    <item
         android:id="@+id/game_menu"
         android:icon="@drawable/ic_baseline_videogame_asset_24"
         android:title="@string/game_menu" />

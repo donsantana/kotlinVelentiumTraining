@@ -41,11 +41,6 @@ class MainActivity : AppCompatActivity() {
 
         setSupportActionBar(binding.toolbar)
 
-//        val toggle = ActionBarDrawerToggle(this,binding.drawerLayout, binding.toolbar,findViewById(R.id.gameFragment),findViewById(R.id.nav_host_fragment_content_main))
-//        toggle.isDrawerIndicatorEnabled = true
-//        binding.drawerLayout.addDrawerListener(toggle)
-//        toggle.syncState()
-
         val navController = findNavController(R.id.nav_host_fragment_content_main)
         appBarConfiguration = AppBarConfiguration(navController.graph)
         setupActionBarWithNavController(navController, appBarConfiguration)
@@ -58,10 +53,11 @@ class MainActivity : AppCompatActivity() {
         )
 
         bottomNavigationView = findViewById(R.id.bottomNavigation)
+        bottomNavigationView.selectedItemId = R.id.devices_menu
         val homeFragment = HomeFragment()
         val gameFragment = GameFragment()
 
-        bottomNavigationView.setOnItemReselectedListener {
+        bottomNavigationView.setOnItemSelectedListener {
             Log.d("item","${it.itemId}")
             when(it.itemId){
                 R.id.home_menu->startActivity(Intent(this, HomeActivity::class.java))
